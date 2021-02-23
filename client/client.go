@@ -7,7 +7,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/sujeshthekkepatt/teams/types"
+	"teams/types"
 )
 
 func createClient() http.Client {
@@ -31,10 +31,10 @@ func createRequest(url string, body []byte) (http.Request, error) {
 }
 
 //TransportEvent Helps to create a client
-func TransportEvent(teamsPayload types.Payload, teamsURL string) (*http.Response, error) {
+func TransportEvent(teamsPayload []byte, teamsURL string) (*http.Response, error) {
 
 	client := createClient()
-	request, err := createRequest(teamsURL, []byte("teamsPayload"))
+	request, err := createRequest(teamsURL, teamsPayload)
 	if err != nil {
 		return nil, err
 	}
