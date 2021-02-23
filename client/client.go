@@ -7,7 +7,7 @@ import (
 	"log"
 	"net/http"
 
-	"teams/types"
+	"github.com/sujeshthekkepatt/teams/types"
 )
 
 func createClient() http.Client {
